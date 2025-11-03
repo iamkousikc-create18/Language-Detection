@@ -54,8 +54,8 @@ pip install fastapi uvicorn scikit-learn numpy pickle-mixin
 
 ✅ Step 3: Place the trained files
 
-Make sure these files are available in the same folder as your FastAPI code: ✔ model.pkl
-✔ vectorizer.pkl
+Make sure these files are available in the same folder as your FastAPI code: ✔ ldmodel.pkl
+✔ ldvector.pkl
 
 
 ---
