@@ -17,10 +17,10 @@ A trained classification model is loaded in a FastAPI backend and provides real-
 
 📁 Language-Detection-FastAPI
 │
-├── model.pkl                # Trained ML model
-├── vectorizer.pkl           # CountVectorizer object
+├── ldmodel.pkl                # Trained ML model
+├── ldvector.pkl           # CountVectorizer object
 ├── lang.py                  # FastAPI application (main backend file)
-├── dataset/                 # (Optional) Dataset used for training
+├── ld.csv                 # (Optional) Dataset used for training
 └── README.md                # Project documentation
 
 
@@ -78,8 +78,8 @@ import uvicorn
 
 app = FastAPI()
 
-model = pickle.load(open('model.pkl', 'rb'))
-vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
+model = pickle.load(open('ldmodel.pkl', 'rb'))
+vectorizer = pickle.load(open('ldvector.pkl', 'rb'))
 
 @app.get("/")
 def home():
@@ -90,22 +90,38 @@ def predict_language(text: str):
     x = vectorizer.transform([text]).toarray()
     prediction = model.predict(x)[0]
 
-    if prediction == 0:
-        output = 'Russian'
-    elif prediction == 1:
-        output = 'Spanish'
-    elif prediction == 2:
+    if(prediction == 0):
+        output = 'Arabic'
+    if(prediction == 1):
+        output = 'Danish'
+    if(prediction == 2):
+        output = 'Dutch'
+    if(prediction == 3):
         output = 'English'
-    elif prediction == 3:
+    if(prediction == 4):
         output = 'French'
-    elif prediction == 4:
+    if(prediction == 5):
+        output = 'German'
+    if(prediction == 6):
+        output = 'Greek'
+    if(prediction == 7):
+        output = 'Hindi'
+    if(prediction == 8):
+        output = 'Italian'
+    if(prediction == 9):
+        output = 'Kannada'
+    if(prediction == 10):
+        output = 'Portuguese'
+    if(prediction == 12):
+        output = 'Russian'
+    if(prediction == 13):
+        output = 'Spanish'
+    if(prediction == 14):
         output = 'Swedish'
-    elif prediction == 5:
+    if(prediction == 15):
         output = 'Tamil'
-    elif prediction == 6:
+    if(prediction == 16):
         output = 'Turkish'
-    else:
-        output = "Unknown"
 
     return {"predicted_language": output}
 
@@ -151,21 +167,23 @@ Algorithm Used: Multinomial Naive Bayes
 Feature Extraction: CountVectorizer (BoW Model)
 
 Supported Languages:
-
-English
-
-French
-
-Spanish
-
-Russian
-
-Swedish
-
-Tamil
-
-Turkish
-
+English     
+French        
+Spanish        
+Portugeese     
+Italian        
+Russian        
+Sweedish       
+Malayalam      
+Dutch          
+Arabic         
+Turkish        
+German         
+Tamil          
+Danish        
+Kannada   
+Greek        
+Hindi           
 
 
 
