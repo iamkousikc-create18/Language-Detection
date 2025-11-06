@@ -198,6 +198,13 @@ Hindi
 
  ---
 
+🎥 Demo Video
+
+You can watch the project in action here:
+
+▶ [Click to watch LanguageDetection.mp4](./LanguageDetection.mp4)
+
+Or download directly from this repository.
 
 ✍ Author
 
