@@ -208,8 +208,6 @@ Or download directly from this repository.
 
 ✍ Author
 
-Kousik Chakraborty
-
 👤 Kousik Chakraborty
 📧 Email: www.kousik.c.in@gmail.com
 🔗 GitHub Profile: https://github.com/iamkousikc-create18
